@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {
@@ -9,7 +10,10 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  console.log(products);
+
+  const state = useSelector((state) => state);
+
+  console.log(state);
   return (
     <section>
       <h1>This is home page</h1>
