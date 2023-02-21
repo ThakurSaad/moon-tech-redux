@@ -9,7 +9,7 @@ const productReducer = (state = initialState, action) => {
     case ADD_TO_CART:
       return {
         ...state,
-        cart: [...state.cart, action.payload],
+        cart: [...state.cart, { ...action.payload, quantity: 1 }],
       };
     case REMOVE_FROM_CART:
       return {
